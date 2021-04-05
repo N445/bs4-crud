@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    public: false
+    autoconfigure: true
+    autowire: true
+
+  Oz\Bs4Crud\Maker\MakeBs4Crud:
+    arguments: ["@maker.doctrine_helper","@maker.renderer.form_type_renderer"]
+    tags: ['maker.command']
+
+  Oz\Bs4Crud\Twig\TwigFunctions:
+    tags: [twig.extension]
